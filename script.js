@@ -123,9 +123,9 @@ const store = {
 		// Note that config values used for <select>s must be strings, unless manually converting values to strings
 		// at render time, and parsing on change.
 		config: {
-			quality: String(QUALITY_HIGH), // Always high quality
+			quality: String(IS_MOBILE ? QUALITY_NORMAL : QUALITY_HIGH), // Normal on mobile, High on desktop
 			shell: 'Random',
-			size: '3', // 8" shell (index 3 in array: 3", 4", 6", 8", 12", 16")
+			size: IS_MOBILE ? '2' : '3', // 6" on mobile, 8" on desktop
 			autoLaunch: false, // Start false, will be enabled after intro
 			finale: false,
 			skyLighting: SKY_LIGHT_DIM + '', // Dim lighting
